@@ -30,7 +30,7 @@ body {
 .left-panel {
     flex: 1; /* Mengambil 50% dari lebar layar */
     /* PENTING: Ganti 'fotografi.jpg' dengan nama file aslimu */
-    background-image: url('fotografi.JPG'); 
+    background-image: url('assets/fotografi.JPG'); 
     background-size: cover;
     background-position: center;
     padding: 4rem; /* Jarak teks dari tepi layar */
