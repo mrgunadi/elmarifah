@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+/* =========================================
+   RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Menggunakan font bergaya mesin ketik/monospace */
+    font-family: 'Fira Code', monospace;
+    color: #1a1a1a;
+    overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
+}
+
+/* =========================================
+   MAIN LAYOUT (SPLIT SCREEN HEADER)
+   ========================================= */
+/* Container utama untuk membagi layar menjadi 2 di bagian atas */
+.container {
+    display: flex;
+    height: 100vh; /* Tinggi penuh layar untuk hero section/header */
+    width: 100%;
+}
+
+/* --- PANEL KIRI --- */
+.left-panel {
+    flex: 1; /* Mengambil 50% dari lebar layar */
+    /* PENTING: Ganti 'fotografi.jpg' dengan nama file aslimu */
+    background-image: url('assets/fotografi.JPG'); 
+    background-size: cover;
+    background-position: center;
+    padding: 4rem; /* Jarak teks dari tepi layar */
+    position: relative;
+}
+
+.title-container h1 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+/* Garis putus-putus di bawah judul */
+.dashed-line {
+    width: 220px;
+    border-bottom: 1.5px dashed #1a1a1a;
+}
+
+/* --- PANEL KANAN --- */
+.right-panel {
+    flex: 1; 
+    background-color: #555d84; /* Warna biru abu-abu */
+    padding: 4rem;
+}
+
+/* =========================================
+   NAVIGATION MENU
+   ========================================= */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    justify-content: flex-end;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    transition: opacity 0.3s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+/* --- DROPDOWN MENU --- */
+nav ul li.dropdown {
+    position: relative;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+nav ul li.dropdown:hover {
+    background-color: #555555; /* Warna abu-abu gelap */
+    /* Ujung bawah datar agar menyatu dengan submenu */
+    border-radius: 12px 12px 0 0; 
+}
+
+nav ul li.dropdown:hover > a {
+    color: #ffffff;
+    opacity: 1; /* Menghilangkan efek transparan hover default */
+}
+
+/* Kotak Sub-menu yang muncul di bawah */
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #555555;
+    border-radius: 0 0 12px 12px;
+    padding: 10px 0 12px 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    
+    /* Animasi muncul/hilang */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s ease-out; 
+}
+
+/* Menampilkan kotak submenu ketika parent di-hover */
+nav ul li.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 5px 16px;
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+    color: #cccccc; 
+    background-color: transparent;
+    opacity: 1; 
+}
+
+/* --- NEWS MENU (OUTLINE HOVER) --- */
+nav ul li.news-item {
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1.5px solid transparent; /* Border awal transparan */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li.news-item:hover {
+    border: 1.5px solid #ffffff; 
+    border-radius: 12px; 
+}
+
+nav ul li.news-item:hover a {
+    opacity: 1;
+    color: #ffffff; 
+}
+
+/* =========================================
+   SLIDER BERITA UPKM (SWIPER)
+   ========================================= */
+.berita-section {
+    background-color: #606494; /* Latar belakang untuk area berita */
+    color: white;
+    text-align: center;
+    padding: 80px 0; /* Padding atas bawah yang lega */
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Pengaturan Kontainer Swiper */
+.swiper {
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+/* Konfigurasi gambar samping agar terpotong dan redup */
+.swiper-slide {
+    width: 60%; 
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0.5; 
+    transform: scale(0.85); 
+}
+
+/* Konfigurasi gambar utama di tengah */
+.swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.swiper-slide img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    display: block;
+}
+
+/* Area Teks di Bawah Slider */
+.text-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+    min-height: 80px; /* Menjaga layout tidak lompat saat teks ganti */
+}
+
+#deskripsi-berita {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Layout Header */
+    .container {
+        flex-direction: column;
+        height: auto; /* Mengubah 100vh menjadi auto agar tidak tertumpuk di mobile */
+    }
+    
+    .left-panel, 
+    .right-panel {
+        min-height: 50vh;
+        padding: 2rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center; /* Menu ke tengah di mobile */
+        justify-content: center;
+    }
+
+    /* Penyesuaian Slider di Mobile */
+    .swiper-slide {
+        width: 85%; /* Gambar membesar di layar kecil agar tidak terlalu kecil */
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+
+    #deskripsi-berita {
+        font-size: 15px;
+    }
+}
