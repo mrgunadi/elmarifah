@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
+
 /* =========================================
    RESET & BASE STYLES
    ========================================= */
@@ -7,6 +8,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* <-- Tambahkan kodenya di sini */
 }
 
 body {
@@ -30,7 +35,7 @@ body {
 .left-panel {
     flex: 1; /* Mengambil 50% dari lebar layar */
     /* PENTING: Ganti 'fotografi.jpg' dengan nama file aslimu */
-    background-image: url('fotografi.JPG'); 
+    background-image: url('assets/fotografi.JPG'); 
     background-size: cover;
     background-position: center;
     padding: 4rem; /* Jarak teks dari tepi layar */
