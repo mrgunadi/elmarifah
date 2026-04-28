@@ -38,7 +38,7 @@ body {
     background-image: url('assets/fotografi.JPG'); 
     background-size: cover;
     background-position: center;
-    padding: 4rem; /* Jarak teks dari tepi layar */
+    padding: 2rem; /* Jarak teks dari tepi layar */
     position: relative;
 }
 
