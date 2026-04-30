@@ -306,7 +306,6 @@ nav ul li.news-item:hover a {
     padding: 80px 20px;
     background-color: #0f1c2e;
     color: #e0e0e0;
-    text-align: center;
     font-family: var(--font-mono);
 }
 
@@ -348,6 +347,7 @@ nav ul li.news-item:hover a {
 
     color: var(--color-text-light);
     padding: 120px 20px;
+    text-align: center;
     font-family: var(--font-mono);
 }
 
