@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap');
 
+/* =========================================
+   CSS VARIABLES (TEMA)
+   Biar ganti warna/font gampang
+   ========================================= */
+:root {
+    /* Fonts */
+    --font-mono: 'Fira Code', monospace;
+    --font-sans: 'Agdasima', sans-serif;
+    
+    /* Colors */
+    --color-text-main: #1a1a1a;
+    --color-text-light: #ffffff;
+    --color-text-muted: #cccccc;
+    
+    --color-bg-right: #555d84;
+    --color-bg-dark: #555555;
+    --color-bg-news: #606494;
+}
 
 /* =========================================
    RESET & BASE STYLES
@@ -11,34 +30,44 @@
 }
 
 html {
-    scroll-behavior: smooth; /* <-- Tambahkan kodenya di sini */
+    scroll-behavior: smooth;
 }
 
 body {
-    /* Menggunakan font bergaya mesin ketik/monospace */
-    font-family: 'Fira Code', monospace;
-    color: #1a1a1a;
-    overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
+    font-family: var(--font-mono);
+    color: var(--color-text-main);
+    overflow-x: hidden;
+}
+
+/* Efek Gradient di Atas */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+    z-index: 5;
+    pointer-events: none;
 }
 
 /* =========================================
    MAIN LAYOUT (SPLIT SCREEN HEADER)
    ========================================= */
-/* Container utama untuk membagi layar menjadi 2 di bagian atas */
 .container {
     display: flex;
-    height: 100vh; /* Tinggi penuh layar untuk hero section/header */
+    height: 100vh;
     width: 100%;
 }
 
 /* --- PANEL KIRI --- */
 .left-panel {
-    flex: 1; /* Mengambil 50% dari lebar layar */
-    /* PENTING: Ganti 'fotografi.jpg' dengan nama file aslimu */
-    background-image: url('assets/fotografi.JPG'); 
+    flex: 1;
+    background-image: url('assets/unity.jpeg'); 
     background-size: cover;
     background-position: center;
-    padding: 2rem; /* Jarak teks dari tepi layar */
+    padding: 2rem;
     position: relative;
 }
 
@@ -49,17 +78,18 @@ body {
     margin-bottom: 4px;
 }
 
-/* Garis putus-putus di bawah judul */
 .dashed-line {
     width: 220px;
-    border-bottom: 1.5px dashed #1a1a1a;
+    border-bottom: 1.5px dashed var(--color-text-main);
 }
 
 /* --- PANEL KANAN --- */
 .right-panel {
     flex: 1; 
-    background-color: #555d84; /* Warna biru abu-abu */
-    padding: 4rem;
+    background-color: var(--color-bg-right);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 /* =========================================
@@ -75,7 +105,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #1a1a1a;
+    color: var(--color-text-main);
     font-size: 1.1rem;
     transition: opacity 0.3s ease, color 0.2s ease;
 }
@@ -94,38 +124,33 @@ nav ul li.dropdown {
 }
 
 nav ul li.dropdown:hover {
-    background-color: #555555; /* Warna abu-abu gelap */
-    /* Ujung bawah datar agar menyatu dengan submenu */
+    background-color: var(--color-bg-dark);
     border-radius: 12px 12px 0 0; 
 }
 
 nav ul li.dropdown:hover > a {
-    color: #ffffff;
-    opacity: 1; /* Menghilangkan efek transparan hover default */
+    color: var(--color-text-light);
+    opacity: 1;
 }
 
-/* Kotak Sub-menu yang muncul di bawah */
 .dropdown-content {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #555555;
+    background-color: var(--color-bg-dark);
     border-radius: 0 0 12px 12px;
     padding: 10px 0 12px 0;
     z-index: 10;
     display: flex;
     flex-direction: column;
     gap: 0;
-    
-    /* Animasi muncul/hilang */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.4s ease-out; 
 }
 
-/* Menampilkan kotak submenu ketika parent di-hover */
 nav ul li.dropdown:hover .dropdown-content {
     opacity: 1;
     visibility: visible;
@@ -133,7 +158,7 @@ nav ul li.dropdown:hover .dropdown-content {
 }
 
 .dropdown-content a {
-    color: #ffffff;
+    color: var(--color-text-light);
     padding: 5px 16px;
     display: block;
     text-align: center;
@@ -141,7 +166,7 @@ nav ul li.dropdown:hover .dropdown-content {
 }
 
 .dropdown-content a:hover {
-    color: #cccccc; 
+    color: var(--color-text-muted); 
     background-color: transparent;
     opacity: 1; 
 }
@@ -150,7 +175,7 @@ nav ul li.dropdown:hover .dropdown-content {
 nav ul li.news-item {
     padding: 12px 20px;
     border-radius: 12px;
-    border: 1.5px solid transparent; /* Border awal transparan */
+    border: 1.5px solid transparent;
     transition: all 0.3s ease;
     cursor: pointer;
     display: flex;
@@ -158,40 +183,73 @@ nav ul li.news-item {
 }
 
 nav ul li.news-item:hover {
-    border: 1.5px solid #ffffff; 
+    border: 1.5px solid var(--color-text-light); 
     border-radius: 12px; 
 }
 
 nav ul li.news-item:hover a {
     opacity: 1;
-    color: #ffffff; 
+    color: var(--color-text-light); 
+}
+
+/* =========================================
+   AREA TEKS PENGENALAN (KAMI EL-MA'RIFAH)
+   ========================================= */
+.intro-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding: 0 40px; 
+    color: var(--color-text-light);
+    text-align: center;
+}
+
+.intro-content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: var(--font-sans); 
+}
+
+.intro-content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#typewriter {
+    display: inline;
+}
+
+#typewriter::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
 }
 
 /* =========================================
    SLIDER BERITA UPKM (SWIPER)
    ========================================= */
 .berita-section {
-    background-color: #606494; /* Latar belakang untuk area berita */
-    color: white;
+    background-color: var(--color-bg-news);
+    color: var(--color-text-light);
     text-align: center;
-    padding: 80px 0; /* Padding atas bawah yang lega */
+    padding: 80px 0;
 }
 
 .section-title {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 50px;
-    font-family: sans-serif;
+    font-family: var(--font-sans);
     letter-spacing: 1px;
 }
 
-/* Pengaturan Kontainer Swiper */
+/* Swiper Container & Slides */
 .swiper {
     width: 100%;
     padding-bottom: 40px;
 }
 
-/* Konfigurasi gambar samping agar terpotong dan redup */
 .swiper-slide {
     width: 60%; 
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -199,7 +257,6 @@ nav ul li.news-item:hover a {
     transform: scale(0.85); 
 }
 
-/* Konfigurasi gambar utama di tengah */
 .swiper-slide-active {
     opacity: 1;
     transform: scale(1);
@@ -212,12 +269,12 @@ nav ul li.news-item:hover a {
     display: block;
 }
 
-/* Area Teks di Bawah Slider */
+/* Teks Bawah Slider */
 .text-container {
     max-width: 700px;
     margin: 0 auto;
     padding: 0 20px;
-    min-height: 80px; /* Menjaga layout tidak lompat saat teks ganti */
+    min-height: 80px;
 }
 
 #deskripsi-berita {
@@ -228,13 +285,57 @@ nav ul li.news-item:hover a {
 }
 
 /* =========================================
+   VISI & MISI SECTION
+   ========================================= */
+.visi-misi-section {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    padding: 80px 20px;
+    font-family: var(--font-mono);
+}
+
+.visi-misi-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 120px;
+}
+
+.visi-misi-box {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.visi-misi-box h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+}
+
+.visi-misi-box p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* =========================================
    RESPONSIVE DESIGN (MOBILE & TABLET)
    ========================================= */
 @media (max-width: 768px) {
-    /* Layout Header */
     .container {
         flex-direction: column;
-        height: auto; /* Mengubah 100vh menjadi auto agar tidak tertumpuk di mobile */
+        height: auto; 
     }
     
     .left-panel, 
@@ -246,13 +347,12 @@ nav ul li.news-item:hover a {
     nav ul {
         flex-direction: column;
         gap: 1.5rem;
-        align-items: center; /* Menu ke tengah di mobile */
+        align-items: center;
         justify-content: center;
     }
 
-    /* Penyesuaian Slider di Mobile */
     .swiper-slide {
-        width: 85%; /* Gambar membesar di layar kecil agar tidak terlalu kecil */
+        width: 85%;
     }
     
     .section-title {
