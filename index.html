@@ -7,6 +7,13 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
+
+    <!-- Tambahan CSS agar efek scroll-nya mulus -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
     
@@ -42,8 +49,9 @@
                     <li class="dropdown">
                         <a href="#">About Us</a>
                         <ul class="dropdown-content">
-                            <li><a href="#">Visi</a></li>
-                            <li><a href="#">Misi</a></li>
+                            <!-- BAGIAN INI YANG DIUBAH: href diarahkan ke id="visi-misi" -->
+                            <li><a href="#visi-misi">Visi</a></li>
+                            <li><a href="#visi-misi">Misi</a></li>
                             <li><a href="#">Mars</a></li>
                             <li><a href="#">Kontak</a></li>
                         </ul>
@@ -87,16 +95,17 @@
                     <p>Unit Pengembangan Kreativitas Mahasantri (UPKM) El-Ma’rifah memiliki visi yaitu sebagai pencetak Mahasantri dan Musyrif/ah yang memiliki kemampuan dan kreativitas tinggi dalam bidang jurnalistik, dan/atau sastra, dan/atau desain, serta mengedepankan kualitas dan profesionalitas anggota dengan maksud pengembangan ilmu untuk mencari ridha Allah SWT.</p>
                 </div>
                 <div class="visi-misi-box">
-    <h2>Misi</h2>
-    <div class="misi-content">
-        <p>Unit Pengembangan Kreativitas Mahasantri (UPKM) El-Ma’rifah memiliki misi:</p>
-        <ol>
-            <li>Mengantarkan Mahasantri dan/atau Musyrif/ah untuk mengembangkan kemampuan dalam bidang jurnalistik dan/atau sastra dan/atau desain.</li>
-            <li>Memberikan pendampingan dan pembinaan demi kemajuan anggota Unit Pengembangan Kreativitas Mahasantri (UPKM) El-Ma’rifah.</li>
-            <li>Menjunjung tinggi kekeluargaan dan kebersamaan dalam organisasi, dengan tetap memperhatikan peraturan yang ada.</li>
-        </ol>
-    </div>
-</div>
+                    <h2>Misi</h2>
+                    <div class="misi-content">
+                        <p>Unit Pengembangan Kreativitas Mahasantri (UPKM) El-Ma’rifah memiliki misi:</p>
+                        <ol>
+                            <li>Mengantarkan Mahasantri dan/atau Musyrif/ah untuk mengembangkan kemampuan dalam bidang jurnalistik dan/atau sastra dan/atau desain.</li>
+                            <li>Memberikan pendampingan dan pembinaan demi kemajuan anggota Unit Pengembangan Kreativitas Mahasantri (UPKM) El-Ma’rifah.</li>
+                            <li>Menjunjung tinggi kekeluargaan dan kebersamaan dalam organisasi, dengan tetap memperhatikan peraturan yang ada.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
