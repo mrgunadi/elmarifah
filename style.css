@@ -245,7 +245,7 @@ nav ul li.news-item:hover a {
    SLIDER BERITA UPKM (SWIPER)
    ========================================= */
 .berita-section {
-    background-color: var(--color-bg-news);
+    background: linear-gradient(to bottom, var(--color-bg-news) 80%, #0f1c2e 100%);
     color: var(--color-text-light);
     text-align: center;
     padding: 80px 0;
