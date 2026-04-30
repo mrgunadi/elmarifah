@@ -386,6 +386,19 @@ nav ul li.news-item:hover a {
     margin-right: 15px;
     object-fit: contain;
 }
+/* Styling khusus untuk teks link di Contact Us */
+.contact-item a {
+    text-decoration: none; /* Menghilangkan garis bawah bawaan link */
+    color: inherit; /* Bikin warnanya ngikutin warna teks (#e0e0e0) yang udah abang atur di .contact-left */
+    transition: color 0.3s ease, transform 0.3s ease; /* Bikin efek transisinya mulus */
+}
+
+/* Efek saat link disorot (hover) sama mouse */
+.contact-item a:hover {
+    color: var(--color-text-light); /* Warnanya berubah jadi putih terang (#ffffff) */
+    text-decoration: underline; /* Munculin garis bawah tipis biar makin jelas kalau itu bisa diklik */
+    text-underline-offset: 4px; /* Kasih jarak sedikit antara teks dan garis bawahnya */
+}
 /* =========================================
    ANIMATIONS
    ========================================= */
