@@ -447,3 +447,66 @@ nav ul li.news-item:hover a {
         padding-left: 20px;
     }
 }
+/* =========================================
+   MARS PAGE STYLES (LYRICS & VIDEO)
+   ========================================= */
+
+/* Menggunakan warna solid navy blue untuk menggantikan gambar panel kiri (opsional kalau nggak pakai background image) */
+.mars-left-panel {
+    background-image: none;
+    background-color: #000080;
+}
+
+/* Container khusus untuk lirik agar tidak bertabrakan dengan navbar */
+.mars-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding: 0 40px; 
+    color: var(--color-text-light);
+    text-align: center;
+    margin-top: 60px; /* Menurunkan posisi konten agar aman dari overlap dengan navigasi */
+}
+
+.mars-content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-family: var(--font-sans);
+}
+
+.lyrics {
+    font-size: 16px;
+    line-height: 1.8;
+    white-space: pre-wrap; /* Menjaga format enter/spasi pada lirik */
+    font-family: var(--font-mono);
+}
+
+.audio-player {
+    margin-top: 40px;
+}
+
+.audio-player audio {
+    width: 100%;
+    max-width: 350px;
+    outline: none;
+}
+
+/* --- VIDEO CONTAINER --- */
+.video-container {
+    margin-top: 40px;
+    text-align: center; 
+}
+
+.video-container h3 {
+    margin-bottom: 15px;
+    font-family: var(--font-sans);
+    color: var(--color-text-light);
+}
+
+.video-container iframe {
+    max-width: 100%; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+}
