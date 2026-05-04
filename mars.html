@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars - UPKM El-Ma'rifah</title>
+    
+    <!-- Tetap memanggil style utama agar desain sama persis -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS tambahan khusus untuk halaman Mars -->
+    <style>
+        /*panel kiri*/
+        .left-panel {
+            background-image: url(assets/unity.jpeg);
+            background-color: #000080;
+        }
+
+        /* Container khusus untuk lirik agar tidak bertabrakan dengan navbar */
+        .mars-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            padding: 0 40px; 
+            color: var(--color-text-light);
+            text-align: center;
+            margin-top: 60px; /* Menurunkan posisi konten agar aman dari overlap dengan navigasi */
+        }
+
+        .mars-content h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            font-family: var(--font-sans);
+        }
+
+        .lyrics {
+            font-size: 16px;
+            line-height: 1.8;
+            white-space: pre-wrap; /* Menjaga format enter/spasi pada lirik */
+            font-family: var(--font-mono);
+        }
+
+        .audio-player {
+            margin-top: 40px;
+        }
+
+        .audio-player audio {
+            width: 100%;
+            max-width: 350px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Panel Kiri -->
+        <div class="left-panel">
+            <div class="title-container">
+                <h1>UPKM El-Ma'rifah</h1>
+                <div class="dashed-line"></div>
+            </div>
+        </div>
+
+        <!-- Panel Kanan -->
+        <div class="right-panel">
+            <nav>
+                <ul>
+                    <li class="menu-biasa">
+                        <!-- Link diarahkan kembali ke index.html -->
+                        <a href="index.html#berita" class="news-text">Berita</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Struktur</a>
+                        <ul class="dropdown-content">
+                            <li><a href="index.html#">Divisi</a></li>
+                            <li><a href="index.html#">Pengurus</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Album MSAA</a>
+                        <ul class="dropdown-content">
+                            <li><a href="index.html#">2024</a></li>
+                            <li><a href="index.html#">2025</a></li>
+                            <li><a href="index.html#">2026</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">About Us</a>
+                        <ul class="dropdown-content">
+                            <li><a href="index.html#visi-misi">Visi</a></li>
+                            <li><a href="index.html#visi-misi">Misi</a></li>
+                            <!-- Link Mars mengarah ke halaman ini sendiri -->
+                            <li><a href="mars.html">Mars</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Konten Mars menggantikan teks "Kami El-Ma'rifah" -->
+            <div class="mars-content">
+                <h2>Mars El-Ma'rifah</h2>
+                
+                <div class="lyrics">Di sini kita berdiri
+Menyatukan visi dan hati
+UPKM El-Ma'rifah tercinta
+Wadah bakti mahasiswa
+
+Reff:
+Maju terus pantang menyerah
+Berlandaskan iman dan takwa
+Mencetak insan yang berakhlak
+Untuk masa depan yang cerah</div>
+
+ <!-- TAMBAHAN AREA VIDEO YOUTUBE DI SINI -->
+                <div class="video-container">
+                    <h3>Tonton Video Mars El-Ma'rifah</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dnAOSQv4uuA?si=xjsahS9LBYZjPSVL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
