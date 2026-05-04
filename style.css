@@ -483,16 +483,6 @@ nav ul li.news-item:hover a {
     font-family: var(--font-mono);
 }
 
-.audio-player {
-    margin-top: 40px;
-}
-
-.audio-player audio {
-    width: 100%;
-    max-width: 350px;
-    outline: none;
-}
-
 /* --- VIDEO CONTAINER --- */
 .video-container {
     margin-top: 40px;
