@@ -12,9 +12,14 @@
     <style>
         /*panel kiri*/
         .left-panel {
-            background-image: url(assets/unity.jpeg);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(assets/unity.jpeg);
             background-color: #000080;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px; /* Jarak antara judul atas dan video */
         }
+        
 
         /* Container khusus untuk lirik agar tidak bertabrakan dengan navbar */
         .mars-content {
@@ -51,6 +56,7 @@
             max-width: 350px;
             outline: none;
         }
+        
     </style>
 </head>
 <body>
@@ -61,6 +67,12 @@
             <div class="title-container">
                 <h1>UPKM El-Ma'rifah</h1>
                 <div class="dashed-line"></div>
+                <!-- TAMBAHAN AREA VIDEO YOUTUBE DI SINI -->
+                <div class="video-container">
+    <h3>Tonton Video Mars El-Ma'rifah</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dnAOSQv4uuA?si=xjsahS9LBYZjPSVL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
             </div>
         </div>
 
@@ -114,13 +126,6 @@ Maju terus pantang menyerah
 Berlandaskan iman dan takwa
 Mencetak insan yang berakhlak
 Untuk masa depan yang cerah</div>
-
- <!-- TAMBAHAN AREA VIDEO YOUTUBE DI SINI -->
-                <div class="video-container">
-                    <h3>Tonton Video Mars El-Ma'rifah</h3>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dnAOSQv4uuA?si=xjsahS9LBYZjPSVL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-
             </div>
         </div>
     </div>
